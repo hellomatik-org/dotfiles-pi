@@ -4,20 +4,35 @@
 
 # Node.js (n)
 export N_PREFIX="$HOME/n"
-export PATH="$N_PREFIX/bin:$PATH"
+[[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 
 # Aliases utiles
 alias ll='ls -la'
+alias la='ls -A'
+alias l='ls -CF'
 alias dc='docker compose'
 alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
 alias dlog='docker compose logs -f'
+alias dstop='docker compose stop'
+alias ddown='docker compose down'
 
 # Hellomatik shortcuts
 alias hm='cd /srv/hellomatik'
 alias hmcore='cd /srv/hellomatik/core'
+alias hmcoreapp='cd /srv/hellomatik/core-app'
 alias hmapp='cd /srv/hellomatik/app'
+alias hmmcp='cd /srv/hellomatik/mcp-router'
+alias hmproxy='cd /srv/hellomatik/ReverseProxy'
+alias hmdb='cd /srv/hellomatik/PostgresSocket'
+alias hmws='cd /srv/hellomatik/RedisBridge'
+
+# Git aliases
+alias gs='git status'
+alias gp='git pull'
+alias gpu='git push'
+alias gc='git commit -m'
+alias gco='git checkout'
+alias gb='git branch'
 
 # Mostrar neofetch al iniciar
-if command -v neofetch &> /dev/null; then
-    neofetch --ascii_distro Raspbian
-fi
+neofetch

@@ -6,3 +6,8 @@ config.env
 
 # OS
 .DS_Store
+Thumbs.db
+
+# Temporal
+*.tmp
+*.bak
