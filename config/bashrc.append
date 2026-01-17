@@ -1,0 +1,23 @@
+
+# dotfiles-pi
+# ===================
+
+# Node.js (n)
+export N_PREFIX="$HOME/n"
+export PATH="$N_PREFIX/bin:$PATH"
+
+# Aliases utiles
+alias ll='ls -la'
+alias dc='docker compose'
+alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
+alias dlog='docker compose logs -f'
+
+# Hellomatik shortcuts
+alias hm='cd /srv/hellomatik'
+alias hmcore='cd /srv/hellomatik/core'
+alias hmapp='cd /srv/hellomatik/app'
+
+# Mostrar neofetch al iniciar
+if command -v neofetch &> /dev/null; then
+    neofetch --ascii_distro Raspbian
+fi
